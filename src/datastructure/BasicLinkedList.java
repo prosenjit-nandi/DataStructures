@@ -1,25 +1,27 @@
 package datastructure;
 
+import datastructure.interfaces.LinkedList;
+
 public class BasicLinkedList<T> implements LinkedList<T> {
 
     private Node first;
     private Node last;
     private int nodeCount;
 
-    public BasicLinkedList(){
+    public BasicLinkedList() {
         first = null;
         last = null;
         nodeCount = 0;
     }
 
-    public int size(){
+    public int size() {
         return nodeCount;
     }
 
     @Override
     public void add(T item) {
         Node itemNode = new Node(item);
-        if(nodeCount == 0){
+        if (nodeCount == 0) {
             first = itemNode;
             last = first;
         } else {
@@ -31,7 +33,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
 
     @Override
     public T remove() {
-        if(nodeCount == 0){
+        if (nodeCount == 0) {
             return null;
         }
         T item = first.getNodeItem();
@@ -42,10 +44,10 @@ public class BasicLinkedList<T> implements LinkedList<T> {
 
     @Override
     public void insert(int position, T item) {
-        if(nodeCount == 0){
+        if (nodeCount == 0) {
             add(item);
         }
-        if(position > nodeCount){
+        if (position > nodeCount) {
             return;
         }
         Node currentNode = first;
@@ -61,10 +63,10 @@ public class BasicLinkedList<T> implements LinkedList<T> {
 
     @Override
     public T removeAt(int position) {
-        if(nodeCount == 0){
+        if (nodeCount == 0) {
             return null;
         }
-        if(position == 0){
+        if (position == 0) {
             remove();
         }
         Node currentNode = first;
@@ -84,11 +86,11 @@ public class BasicLinkedList<T> implements LinkedList<T> {
     @Override
     public int find(T item) {
         Node currentNode = first;
-        if(size() == 0){
+        if (size() == 0) {
             return -1;
         }
         for (int i = 0; i < size() && currentNode != null; i++) {
-            if(currentNode.getNodeItem().equals(item)){
+            if (currentNode.getNodeItem().equals(item)) {
                 return i;
             }
             currentNode = currentNode.getNextNode();
@@ -99,7 +101,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
     @Override
     public T get(int position) {
         Node currentNode = first;
-        if(nodeCount == 0){
+        if (nodeCount == 0) {
             return first.getNodeItem();
         }
         for (int i = 0; i < position && currentNode != null; i++) {
@@ -110,25 +112,24 @@ public class BasicLinkedList<T> implements LinkedList<T> {
     }
 
 
-
     private class Node {
         private Node nextNode;
-        private T nodeItem;
+        private final T nodeItem;
 
-        public Node(T item){
+        public Node(T item) {
             this.nodeItem = item;
             this.nextNode = null;
         }
 
-        public void setNextNode(Node n){
-            this.nextNode = n;
-        }
-
-        public Node getNextNode(){
+        public Node getNextNode() {
             return this.nextNode;
         }
 
-        public T getNodeItem(){
+        public void setNextNode(Node n) {
+            this.nextNode = n;
+        }
+
+        public T getNodeItem() {
             return this.nodeItem;
         }
 

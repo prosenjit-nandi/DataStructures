@@ -1,44 +1,45 @@
 package datastructure;
 
 public class BasicHashTable<K, V> {
-    private HashEntry[] data;
-    private int capacity;
+    private final HashEntry[] data;
+    private final int capacity;
     private int size;
 
-    public BasicHashTable(int tableSize){
+    public BasicHashTable(int tableSize) {
         this.capacity = tableSize;
         data = new HashEntry[this.capacity];
         this.size = 0;
     }
 
-    public V get(K key){
+    public V get(K key) {
         int hash = calculateHash(key);
-        if(data[hash] == null){
+        if (data[hash] == null) {
             return null;
         }
-        V value = (V) data[hash].getValue();
+        V value;
+        value = (V) data[hash].getValue();
         return value;
     }
 
-    public void put(K key, V value){
+    public void put(K key, V value) {
         int hash = calculateHash(key);
         data[hash] = new HashEntry<K, V>(key, value);
         size++;
     }
 
-    public V delete(K key){
+    public V delete(K key) {
         V value = get(key);
 
-        if(value != null) {
+        if (value != null) {
             int hash = calculateHash(key);
             data[hash] = null;
             size--;
 
             hash = (hash + 1) % capacity;
-            while (data[hash] != null){
+            while (data[hash] != null) {
                 HashEntry entry = data[hash];
                 data[hash] = null;
-                put((K)entry.getkey(), (V)entry.getValue());
+                put((K) entry.getkey(), (V) entry.getValue());
                 size--;
                 hash = (hash + 1) % capacity;
             }
@@ -47,29 +48,29 @@ public class BasicHashTable<K, V> {
         return value;
     }
 
-    public boolean hasKey(K key){
+    public boolean hasKey(K key) {
         int hash = calculateHash(key);
         return data[hash] != null && data[hash].getkey().equals(key);
     }
 
-    public boolean hasValue(V value){
-        for (HashEntry<K, V> dataItem: data){
-            if(dataItem != null && dataItem.getValue().equals(value)){
+    public boolean hasValue(V value) {
+        for (HashEntry<K, V> dataItem : data) {
+            if (dataItem != null && dataItem.getValue().equals(value)) {
                 return true;
             }
         }
         return false;
     }
 
-    private int calculateHash(K key){
+    private int calculateHash(K key) {
         int hash = key.hashCode() % this.capacity;
-        while(data[hash] != null && !data[hash].getkey().equals(key)){
+        while (data[hash] != null && !data[hash].getkey().equals(key)) {
             hash = (hash + 1) % this.capacity;
         }
         return hash;
     }
 
-    public int size(){
+    public int size() {
         return this.size;
     }
 
@@ -77,7 +78,7 @@ public class BasicHashTable<K, V> {
         private K key;
         private V value;
 
-        public HashEntry(K key, V value){
+        public HashEntry(K key, V value) {
             this.key = key;
             this.value = value;
         }
