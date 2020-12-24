@@ -1,6 +1,13 @@
 # Compiled class file
 *.class
 
+#MacOS files
+.DS_Store
+
+#IDE Files and Folders
+.idea
+*.iml
+
 # Log file
 *.log
 

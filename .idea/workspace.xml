@@ -1,24 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="430bba64-9fe1-4fc7-8a88-e73f8bfa1e33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/ArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/queue/ArrayQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/stack/ArrayStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/BasicBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/BasicBinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/BasicHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/BasicHashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/BasicLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/BasicLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/interfaces/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/ListQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/queue/ListQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/ListStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/stack/ListStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/interfaces/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datastructure/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datastructure/interfaces/Stack.java" afterDir="false" />
+    <list default="true" id="430bba64-9fe1-4fc7-8a88-e73f8bfa1e33" name="Default Changelist" comment="Restructure directories">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +22,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -51,6 +37,21 @@
       <option name="presentableId" value="Default" />
       <updated>1608752439423</updated>
     </task>
+    <task id="LOCAL-00001" summary="Restructure directories">
+      <created>1608753241098</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608753241098</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Restructure directories">
+      <created>1608753546249</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608753546250</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -63,5 +64,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Restructure directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Restructure directories" />
   </component>
 </project>
