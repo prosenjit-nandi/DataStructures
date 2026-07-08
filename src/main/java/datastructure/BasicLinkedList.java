@@ -14,13 +14,19 @@ public class BasicLinkedList<T> implements LinkedList<T> {
         nodeCount = 0;
     }
 
+    @Override
     public int size() {
         return nodeCount;
     }
 
     @Override
+    public boolean isEmpty() {
+        return nodeCount == 0;
+    }
+
+    @Override
     public void add(T item) {
-        Node itemNode = new Node(item);
+        var itemNode = new Node(item);
         if (nodeCount == 0) {
             first = itemNode;
             last = first;
@@ -39,57 +45,57 @@ public class BasicLinkedList<T> implements LinkedList<T> {
         T item = first.getNodeItem();
         first = first.getNextNode();
         nodeCount--;
+        if (nodeCount == 0) {
+            last = null;
+        }
         return item;
     }
 
     @Override
     public void insert(int position, T item) {
-        if (nodeCount == 0) {
-            add(item);
+        if (position < 0 || position > nodeCount) {
+            throw new IndexOutOfBoundsException("position: " + position + ", size: " + nodeCount);
         }
-        if (position > nodeCount) {
+        if (position == nodeCount) {
+            add(item);
             return;
         }
-        Node currentNode = first;
-        for (int i = 0; i < position && currentNode != null; i++) {
-            currentNode = currentNode.getNextNode();
+        if (position == 0) {
+            var newNode = new Node(item);
+            newNode.setNextNode(first);
+            first = newNode;
+            nodeCount++;
+            return;
         }
-        Node newNode = new Node(item);
-        Node nextNode = currentNode.getNextNode();
-        currentNode.setNextNode(newNode);
-        newNode.setNextNode(nextNode);
+        Node prevNode = nodeAt(position - 1);
+        var newNode = new Node(item);
+        newNode.setNextNode(prevNode.getNextNode());
+        prevNode.setNextNode(newNode);
         nodeCount++;
     }
 
     @Override
     public T removeAt(int position) {
-        if (nodeCount == 0) {
-            return null;
+        if (position < 0 || position >= nodeCount) {
+            throw new IndexOutOfBoundsException("position: " + position + ", size: " + nodeCount);
         }
         if (position == 0) {
-            remove();
+            return remove();
         }
-        Node currentNode = first;
-        Node prevNode = first;
-        for (int i = 0; i < position && currentNode != null; i++) {
-            prevNode = currentNode;
-            currentNode = currentNode.getNextNode();
-        }
-
-        T item = currentNode.getNodeItem();
+        Node prevNode = nodeAt(position - 1);
+        Node currentNode = prevNode.getNextNode();
         prevNode.setNextNode(currentNode.getNextNode());
+        if (currentNode == last) {
+            last = prevNode;
+        }
         nodeCount--;
-
-        return item;
+        return currentNode.getNodeItem();
     }
 
     @Override
     public int find(T item) {
         Node currentNode = first;
-        if (size() == 0) {
-            return -1;
-        }
-        for (int i = 0; i < size() && currentNode != null; i++) {
+        for (int i = 0; i < nodeCount; i++) {
             if (currentNode.getNodeItem().equals(item)) {
                 return i;
             }
@@ -100,38 +106,39 @@ public class BasicLinkedList<T> implements LinkedList<T> {
 
     @Override
     public T get(int position) {
-        Node currentNode = first;
-        if (nodeCount == 0) {
-            return first.getNodeItem();
+        if (position < 0 || position >= nodeCount) {
+            throw new IndexOutOfBoundsException("position: " + position + ", size: " + nodeCount);
         }
-        for (int i = 0; i < position && currentNode != null; i++) {
-            currentNode = currentNode.getNextNode();
-        }
-
-        return currentNode.getNodeItem();
+        return nodeAt(position).getNodeItem();
     }
 
+    private Node nodeAt(int position) {
+        Node currentNode = first;
+        for (int i = 0; i < position; i++) {
+            currentNode = currentNode.getNextNode();
+        }
+        return currentNode;
+    }
 
     private class Node {
         private Node nextNode;
         private final T nodeItem;
 
-        public Node(T item) {
+        Node(T item) {
             this.nodeItem = item;
             this.nextNode = null;
         }
 
-        public Node getNextNode() {
+        Node getNextNode() {
             return this.nextNode;
         }
 
-        public void setNextNode(Node n) {
+        void setNextNode(Node n) {
             this.nextNode = n;
         }
 
-        public T getNodeItem() {
+        T getNodeItem() {
             return this.nodeItem;
         }
-
     }
 }

@@ -5,9 +5,13 @@ public interface Stack<T> {
 
     T pop();
 
+    T peek();
+
     boolean contains(T item);
 
     T get(T item);
 
     int size();
+
+    boolean isEmpty();
 }

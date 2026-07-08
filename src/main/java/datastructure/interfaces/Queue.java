@@ -5,9 +5,13 @@ public interface Queue<T> {
 
     T deQueue();
 
+    T peek();
+
     boolean contains(T item);
 
     T get(int position);
 
     int size();
+
+    boolean isEmpty();
 }

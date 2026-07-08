@@ -12,4 +12,8 @@ public interface LinkedList<T> {
     int find(T item);
 
     T get(int position);
+
+    int size();
+
+    boolean isEmpty();
 }
