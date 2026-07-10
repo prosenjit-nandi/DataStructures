@@ -28,12 +28,12 @@ public class ListQueue<T> implements Queue<T> {
         if (data.isEmpty()) {
             return null;
         }
-        return data.remove(0);
+        return data.removeFirst();
     }
 
     @Override
     public T peek() {
-        return data.isEmpty() ? null : data.get(0);
+        return data.isEmpty() ? null : data.getFirst();
     }
 
     @Override

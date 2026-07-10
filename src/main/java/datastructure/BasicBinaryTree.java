@@ -49,7 +49,7 @@ public class BasicBinaryTree<T extends Comparable<T>> {
     }
 
     public List<T> inorderTraversal() {
-        List<T> result = new ArrayList<>();
+        var result = new ArrayList<T>();
         inorder(root, result);
         return result;
     }
@@ -70,7 +70,7 @@ public class BasicBinaryTree<T extends Comparable<T>> {
         if (node == null) {
             return null;
         }
-        int comparison = item.compareTo(node.getItem());
+        var comparison = item.compareTo(node.getItem());
         if (comparison == 0) {
             return node;
         }
@@ -78,7 +78,7 @@ public class BasicBinaryTree<T extends Comparable<T>> {
     }
 
     private Node deleteRecursive(Node node, T item) {
-        int comparison = item.compareTo(node.getItem());
+        var comparison = item.compareTo(node.getItem());
         if (comparison < 0) {
             node.setLeft(deleteRecursive(node.getLeft(), item));
             return node;
@@ -93,7 +93,7 @@ public class BasicBinaryTree<T extends Comparable<T>> {
         if (node.getRight() == null) {
             return node.getLeft();
         }
-        Node successor = min(node.getRight());
+        var successor = min(node.getRight());
         node.setItem(successor.getItem());
         node.setRight(deleteMin(node.getRight()));
         return node;

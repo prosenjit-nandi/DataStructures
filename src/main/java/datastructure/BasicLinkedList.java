@@ -47,7 +47,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
         if (nodeCount == 0) {
             return null;
         }
-        T item = first.getNodeItem();
+        var item = first.getNodeItem();
         first = first.getNextNode();
         nodeCount--;
         if (nodeCount == 0) {
@@ -72,7 +72,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
             nodeCount++;
             return;
         }
-        Node prevNode = nodeAt(position - 1);
+        var prevNode = nodeAt(position - 1);
         var newNode = new Node(item);
         newNode.setNextNode(prevNode.getNextNode());
         prevNode.setNextNode(newNode);
@@ -87,8 +87,8 @@ public class BasicLinkedList<T> implements LinkedList<T> {
         if (position == 0) {
             return remove();
         }
-        Node prevNode = nodeAt(position - 1);
-        Node currentNode = prevNode.getNextNode();
+        var prevNode = nodeAt(position - 1);
+        var currentNode = prevNode.getNextNode();
         prevNode.setNextNode(currentNode.getNextNode());
         if (currentNode == last) {
             last = prevNode;
@@ -99,7 +99,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
 
     @Override
     public int find(T item) {
-        Node currentNode = first;
+        var currentNode = first;
         for (int i = 0; i < nodeCount; i++) {
             if (currentNode.getNodeItem().equals(item)) {
                 return i;
@@ -118,7 +118,7 @@ public class BasicLinkedList<T> implements LinkedList<T> {
     }
 
     private Node nodeAt(int position) {
-        Node currentNode = first;
+        var currentNode = first;
         for (int i = 0; i < position; i++) {
             currentNode = currentNode.getNextNode();
         }

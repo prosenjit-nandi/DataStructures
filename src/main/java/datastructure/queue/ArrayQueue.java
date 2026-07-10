@@ -41,7 +41,7 @@ public class ArrayQueue<T> implements Queue<T> {
         if (size == 0) {
             return null;
         }
-        T item = data[front];
+        var item = data[front];
         data[front] = null;
         front = (front + 1) % capacity;
         size--;

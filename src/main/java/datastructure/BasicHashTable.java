@@ -19,15 +19,15 @@ public class BasicHashTable<K, V> {
     }
 
     public V get(K key) {
-        int hash = calculateHash(key);
-        return data[hash] == null ? null : data[hash].getValue();
+        var hash = calculateHash(key);
+        return data[hash] == null ? null : data[hash].value();
     }
 
     public void put(K key, V value) {
         if ((double) (size + 1) / capacity > LOAD_FACTOR_THRESHOLD) {
             grow();
         }
-        int hash = calculateHash(key);
+        var hash = calculateHash(key);
         if (data[hash] == null) {
             size++;
         }
@@ -35,9 +35,9 @@ public class BasicHashTable<K, V> {
     }
 
     public V delete(K key) {
-        V value = get(key);
+        var value = get(key);
         if (value != null) {
-            int hash = calculateHash(key);
+            var hash = calculateHash(key);
             data[hash] = null;
             size--;
 
@@ -45,10 +45,10 @@ public class BasicHashTable<K, V> {
             // in the probe chain back so future lookups still find them.
             hash = (hash + 1) % capacity;
             while (data[hash] != null) {
-                HashEntry<K, V> entry = data[hash];
+                var entry = data[hash];
                 data[hash] = null;
                 size--;
-                put(entry.getKey(), entry.getValue());
+                put(entry.key(), entry.value());
                 hash = (hash + 1) % capacity;
             }
         }
@@ -58,13 +58,13 @@ public class BasicHashTable<K, V> {
     public boolean hasKey(K key) {
         // calculateHash's probe only ever stops on an empty slot or the
         // matching key, so a non-null slot here is guaranteed to be a match.
-        int hash = calculateHash(key);
+        var hash = calculateHash(key);
         return data[hash] != null;
     }
 
     public boolean hasValue(V value) {
-        for (HashEntry<K, V> entry : data) {
-            if (entry != null && entry.getValue().equals(value)) {
+        for (var entry : data) {
+            if (entry != null && entry.value().equals(value)) {
                 return true;
             }
         }
@@ -80,21 +80,21 @@ public class BasicHashTable<K, V> {
     }
 
     private int calculateHash(K key) {
-        int hash = Math.floorMod(key.hashCode(), capacity);
-        while (data[hash] != null && !data[hash].getKey().equals(key)) {
+        var hash = Math.floorMod(key.hashCode(), capacity);
+        while (data[hash] != null && !data[hash].key().equals(key)) {
             hash = (hash + 1) % capacity;
         }
         return hash;
     }
 
     private void grow() {
-        HashEntry<K, V>[] oldData = data;
+        var oldData = data;
         capacity *= 2;
         data = newTable(capacity);
         size = 0;
-        for (HashEntry<K, V> entry : oldData) {
+        for (var entry : oldData) {
             if (entry != null) {
-                put(entry.getKey(), entry.getValue());
+                put(entry.key(), entry.value());
             }
         }
     }
@@ -104,21 +104,6 @@ public class BasicHashTable<K, V> {
         return (HashEntry<K, V>[]) new HashEntry[capacity];
     }
 
-    private static final class HashEntry<K, V> {
-        private final K key;
-        private final V value;
-
-        HashEntry(K key, V value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        K getKey() {
-            return key;
-        }
-
-        V getValue() {
-            return value;
-        }
+    private record HashEntry<K, V>(K key, V value) {
     }
 }

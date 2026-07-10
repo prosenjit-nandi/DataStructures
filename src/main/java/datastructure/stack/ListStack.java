@@ -27,12 +27,12 @@ public class ListStack<T> implements Stack<T> {
         if (data.isEmpty()) {
             return null;
         }
-        return data.remove(data.size() - 1);
+        return data.removeLast();
     }
 
     @Override
     public T peek() {
-        return data.isEmpty() ? null : data.get(data.size() - 1);
+        return data.isEmpty() ? null : data.getLast();
     }
 
     @Override

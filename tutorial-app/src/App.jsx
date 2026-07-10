@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Book, Code, Info, Play, Menu, X, Terminal, Database } from 'lucide-react';
-import data from './data.json';
+import defaultData from './data.json';
 import './App.css';
 
-function App() {
-  const [activeDs, setActiveDs] = useState(data.length > 0 ? data[0] : null);
+function App({ initialData = defaultData }) {
+  const [activeDs, setActiveDs] = useState(initialData.length > 0 ? initialData[0] : null);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
@@ -31,7 +31,7 @@ function App() {
           <h2>DataStructures</h2>
         </div>
         <ul className="nav-list">
-          {data.map((ds) => (
+          {initialData.map((ds) => (
             <li key={ds.id}>
               <button 
                 className={`nav-btn ${activeDs?.id === ds.id ? 'active' : ''}`}
@@ -47,7 +47,7 @@ function App() {
           ))}
         </ul>
         <div className="sidebar-footer">
-          <p>{data.length} structures loaded</p>
+          <p>{initialData.length} structures loaded</p>
         </div>
       </nav>
 
