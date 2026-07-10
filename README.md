@@ -2,7 +2,7 @@ Demo Project for learning DataStructures in Java
 
 ## Build & test
 
-Requires JDK 21+. Build with the bundled Gradle wrapper:
+Requires JDK 26+. Build with the bundled Gradle wrapper:
 
 ```
 ./gradlew test

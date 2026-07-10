@@ -11,12 +11,13 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(26)
+    }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation platform('org.junit:junit-bom:5.14.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
@@ -27,7 +28,7 @@ test {
 }
 
 jacoco {
-    toolVersion = '0.8.12'
+    toolVersion = '0.8.15'
 }
 
 jacocoTestReport {
