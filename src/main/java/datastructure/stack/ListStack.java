@@ -5,6 +5,11 @@ import datastructure.interfaces.Stack;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @description A Stack implementation backed by an ArrayList.
+ * @usage Best used for Last-In-First-Out (LIFO) processing such as undo mechanisms or backtracking, where dynamic resizing is needed.
+ * @summary Implements the Stack interface using java.util.ArrayList. Elements are pushed and popped from the end of the list for amortized O(1) operations.
+ */
 public class ListStack<T> implements Stack<T> {
     private final List<T> data;
 

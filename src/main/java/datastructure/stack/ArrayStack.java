@@ -2,6 +2,11 @@ package datastructure.stack;
 
 import datastructure.interfaces.Stack;
 
+/**
+ * @description A Stack implementation backed by a fixed-size array.
+ * @usage Ideal for Last-In-First-Out (LIFO) processing when the maximum number of elements is known beforehand, ensuring low memory overhead and strict O(1) performance.
+ * @summary Implements the Stack interface using an array and a pointer indicating the top. Elements are pushed by incrementing the pointer and popped by decrementing it.
+ */
 public class ArrayStack<T> implements Stack<T> {
     private final T[] data;
     private final int capacity;

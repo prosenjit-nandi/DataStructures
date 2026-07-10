@@ -3,6 +3,11 @@ package datastructure;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @description A basic Binary Search Tree (BST) implementation.
+ * @usage Useful for maintaining a sorted collection of elements with efficient search, insertion, and deletion operations (O(log n) on average).
+ * @summary Implements a node-based binary tree structure. Supports insertion, searching, Hibbard deletion, and in-order traversal.
+ */
 public class BasicBinaryTree<T extends Comparable<T>> {
 
     private Node root;

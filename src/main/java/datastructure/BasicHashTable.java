@@ -1,5 +1,10 @@
 package datastructure;
 
+/**
+ * @description A basic implementation of a Hash Table, providing key-value mapping functionality.
+ * @usage Best used when fast O(1) lookups, insertions, and deletions are required, and the exact order of elements is not important.
+ * @summary Uses an array of HashEntry objects and implements open-addressing with linear probing to handle collisions. It automatically resizes when a load factor threshold is reached.
+ */
 public class BasicHashTable<K, V> {
     private static final double LOAD_FACTOR_THRESHOLD = 0.7;
 

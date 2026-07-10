@@ -2,6 +2,11 @@ package datastructure;
 
 import datastructure.interfaces.LinkedList;
 
+/**
+ * @description A basic singly linked list implementation.
+ * @usage Used for collections where frequent dynamic additions and removals (especially at the beginning or end) are needed without the overhead of resizing an underlying array.
+ * @summary Composed of Node objects where each node points to the next. Supports standard list operations like add, insert, remove, and find.
+ */
 public class BasicLinkedList<T> implements LinkedList<T> {
 
     private Node first;

@@ -2,6 +2,11 @@ package datastructure.queue;
 
 import datastructure.interfaces.Queue;
 
+/**
+ * @description A Queue implementation backed by a circular fixed-size array.
+ * @usage Useful for First-In-First-Out (FIFO) processing when the maximum capacity is known in advance and high performance with O(1) enqueue/dequeue is desired.
+ * @summary Implements the Queue interface using a circular array technique. Maintains 'front' and 'size' pointers to handle wrap-around indices efficiently without shifting elements.
+ */
 public class ArrayQueue<T> implements Queue<T> {
 
     private final T[] data;
