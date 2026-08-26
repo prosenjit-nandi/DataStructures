@@ -1,0 +1,113 @@
+{
+  "pages": [
+    {
+      "id": "screens",
+      "name": "Screens"
+    },
+    {
+      "id": "system",
+      "name": "Design system"
+    }
+  ],
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 1420,
+      "w": 1440,
+      "h": 3160,
+      "page": "screens",
+      "title": "Structure page \u2014 full tier"
+    },
+    {
+      "file": "Home.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1260,
+      "page": "screens",
+      "title": "Home"
+    },
+    {
+      "file": "Catalog.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 1160,
+      "page": "screens",
+      "title": "Catalog browse"
+    },
+    {
+      "file": "Search.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "page": "screens",
+      "title": "Search \u2014 no results"
+    },
+    {
+      "file": "Compare.dc.html",
+      "x": 1560,
+      "y": 1420,
+      "w": 1440,
+      "h": 1060,
+      "page": "screens",
+      "title": "Compare view"
+    },
+    {
+      "file": "Explained.dc.html",
+      "x": 3120,
+      "y": 1420,
+      "w": 1440,
+      "h": 940,
+      "page": "screens",
+      "title": "Structure page \u2014 explanation only"
+    },
+    {
+      "file": "Mobile.dc.html",
+      "x": 1560,
+      "y": 2620,
+      "w": 390,
+      "h": 1560,
+      "page": "screens",
+      "title": "Structure page \u2014 mobile 390px"
+    },
+    {
+      "file": "System.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1360,
+      "page": "system",
+      "title": "Design system"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "core-screen",
+      "x": 0,
+      "y": 1280,
+      "w": 420,
+      "text": "The core screen.\nSection order is fixed on every structure page: what it is -> use when -> AVOID WHEN -> complexity -> visual -> code -> walkthrough.\nAvoid-when sits above the implementation on purpose (journey C)."
+    },
+    {
+      "id": "no-code-fold",
+      "x": 3120,
+      "y": 1280,
+      "w": 420,
+      "text": "Explanation-only tier.\nThe amber banner is the design response to make-or-break moment M5: a thin page that announces itself keeps trust; one that doesn't destroys it."
+    },
+    {
+      "id": "empty-state",
+      "x": 3120,
+      "y": -180,
+      "w": 420,
+      "text": "Empty states are trust moments, not afterthoughts.\nNo-results names the two nearest structures rather than shrugging."
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "screens"
+  }
+}

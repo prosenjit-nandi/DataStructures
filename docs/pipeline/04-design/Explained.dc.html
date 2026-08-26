@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+:root{
+  /* carried from tutorial-app/src/App.css */
+  --bg:#0f111a; --surface:#161926; --surface-2:#1a1d2d; --rail:#131522; --code-bg:#12141f;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --ink:#e2e8f0; --ink-hi:#f4f7fb; --ink-mut:#94a3b8; --ink-faint:#64748b;
+  --accent:#3b82f6; --accent-hi:#60a5fa; --accent-bg:rgba(59,130,246,.12); --accent-line:rgba(59,130,246,.35);
+  /* semantic */
+  --use:#34d399; --use-bg:rgba(52,211,153,.09); --use-line:rgba(52,211,153,.28);
+  --avoid:#f87171; --avoid-bg:rgba(248,113,113,.09); --avoid-line:rgba(248,113,113,.30);
+  --warn:#fbbf24; --warn-bg:rgba(251,191,36,.09); --warn-line:rgba(251,191,36,.28);
+  /* scale */
+  --r1:4px; --r2:6px; --r3:10px; --r4:14px;
+  --sans:'IBM Plex Sans',ui-sans-serif,system-ui,'Segoe UI',sans-serif;
+  --disp:'Space Grotesk','IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-hi);text-decoration:none}
+a:hover{color:#93c5fd;text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink-hi);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:38px}
+h2{font-size:21px;letter-spacing:-.01em}
+h3{font-size:16px;letter-spacing:0}
+.eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint)}
+.mut{color:var(--ink-mut)}
+.faint{color:var(--ink-faint)}
+.sm{font-size:14px;line-height:1.55}
+.xs{font-size:12.5px;line-height:1.45}
+.mono{font-family:var(--mono)}
+.row{display:flex;align-items:center}
+.col{display:flex;flex-direction:column}
+/* chrome */
+.topbar{display:flex;align-items:center;gap:20px;height:60px;padding:0 28px;background:var(--rail);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:600 15.5px/1 var(--disp);color:var(--ink-hi);letter-spacing:-.01em}
+.searchbox{display:flex;align-items:center;gap:10px;flex-grow:1;max-width:420px;height:34px;padding:0 12px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r2);color:var(--ink-faint);font-size:13.5px}
+.kbd{font:500 11px/1 var(--mono);color:var(--ink-faint);border:1px solid var(--line-2);border-radius:var(--r1);padding:3px 5px}
+.navlink{font-size:13.5px;color:var(--ink-mut)}
+.navlink.on{color:var(--ink-hi)}
+/* rail */
+.rail{width:252px;flex-shrink:0;background:var(--rail);border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;gap:4px}
+.railgrp{padding:16px 10px 6px}
+.railitem{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:var(--r2);color:var(--ink-mut);font-size:13.5px}
+.railitem.on{background:var(--accent-bg);color:var(--ink-hi);box-shadow:inset 2px 0 0 var(--accent)}
+.railitem .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:var(--r1);font:500 11.5px/1 var(--sans);letter-spacing:.02em;border:1px solid var(--line-2);color:var(--ink-mut)}
+.chip.b{color:var(--use);border-color:var(--use-line);background:var(--use-bg)}
+.chip.i{color:var(--accent-hi);border-color:var(--accent-line);background:var(--accent-bg)}
+.chip.a{color:var(--warn);border-color:var(--warn-line);background:var(--warn-bg)}
+.chip.e{color:var(--avoid);border-color:var(--avoid-line);background:var(--avoid-bg)}
+.chip.id{font-family:var(--mono);color:var(--ink-faint)}
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r4);padding:22px 24px}
+.panel.use{border-color:var(--use-line);background:linear-gradient(180deg,var(--use-bg),transparent 60%),var(--surface)}
+.panel.avoid{border-color:var(--avoid-line);background:linear-gradient(180deg,var(--avoid-bg),transparent 60%),var(--surface)}
+.phead{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:36px;padding:0 15px;border-radius:var(--r2);font:500 13.5px/1 var(--sans);border:1px solid var(--line-2);color:var(--ink);background:transparent}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.sm{height:29px;padding:0 11px;font-size:12.5px}
+/* table */
+table{border-collapse:collapse;width:100%}
+th{font:600 11.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding:0 14px 9px 0;border-bottom:1px solid var(--line)}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+td.o{font-family:var(--mono);color:var(--ink-hi);font-size:13px}
+td.c{font-family:var(--mono);font-size:13px;color:var(--accent-hi)}
+/* code */
+.codewrap{background:var(--code-bg);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden}
+.codebar{display:flex;align-items:center;gap:4px;padding:8px 10px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.tab{padding:5px 11px;border-radius:var(--r1);font:500 12.5px/1 var(--mono);color:var(--ink-faint)}
+.tab.on{background:rgba(255,255,255,.06);color:var(--ink-hi)}
+pre{font:400 13px/1.75 var(--mono);padding:14px 0;overflow:hidden}
+.ln{display:inline-block;width:40px;padding-right:14px;text-align:right;color:#3d465c;user-select:none}
+.k{color:#c4a2f5}.t{color:#6fc3df}.m{color:#82aaff}.n{color:#f78c6c}.s{color:#c3e88d}.cm{color:#5a6478;font-style:italic}.p{color:#7d8799}
+.hl{background:rgba(59,130,246,.10);box-shadow:inset 2px 0 0 var(--accent)}
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r3);padding:15px 16px;display:flex;flex-direction:column;gap:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.tick{flex-shrink:0;margin-top:3px}
+
+  </style>
+</helmet>
+<div style="display:flex;flex-direction:column;min-height:100%">
+  <div class="topbar">
+    <div class="brand"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.9" stroke-linecap="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/><path d="M4 11.5v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span>Structures<span style="color:#64748b">.java</span></span></div>
+    <div style="display:flex;gap:20px;margin-left:12px"><span class="navlink">Learn</span><span class="navlink on">Catalog</span><span class="navlink">Compare</span><span class="navlink">About</span></div>
+    <div class="searchbox" style="margin-left:auto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span style="flex-grow:1">Search 129 structures</span><span class="kbd">/</span></div>
+  </div>
+
+  <div style="padding:34px 44px 56px;max-width:960px">
+    <div class="xs faint" style="margin-bottom:14px">Catalog <span style="color:#3d4557">/</span> Trees &amp; Balanced Search Trees <span style="color:#3d4557">/</span> <span style="color:#94a3b8">Link-Cut Tree</span></div>
+
+    <div class="col" style="gap:14px;margin-bottom:26px">
+      <h1>Link-Cut Tree</h1>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <span class="chip id">DS-059</span><span class="chip e">Expert</span><span class="chip">Phase 5</span>
+        <span class="chip" style="color:#fbbf24;border-color:var(--warn-line);background:var(--warn-bg)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v6c0 4.4 3.3 7.6 8 8.6 4.7-1 8-4.2 8-8.6V7l-8-4Z"/></svg>Explanation only</span>
+        <span class="chip">4 min read</span>
+      </div>
+    </div>
+
+    <!-- the honesty banner: this is the whole point of the tier -->
+    <div style="display:flex;gap:15px;padding:18px 20px;border:1px solid var(--warn-line);background:var(--warn-bg);border-radius:var(--r4);margin-bottom:30px">
+      <span style="color:#fbbf24;flex-shrink:0;margin-top:1px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16.5v.01"/></svg></span>
+      <div class="col" style="gap:7px">
+        <div style="font:600 15.5px/1.3 var(--disp);color:#fcd34d">There is no implementation on this page — on purpose</div>
+        <div class="sm" style="color:#cbd5e1;max-width:76ch">A link-cut tree is a splay tree of splay trees. Getting one to the repo's 100&nbsp;% branch-coverage standard is several days of work, and almost nobody writing Java will ever need one. So this page explains what it is, what it costs, and what to use instead — and stops there. It is scheduled for phase 5 and will be marked <span class="mono" style="color:#94a3b8">Built</span> if that changes.</div>
+        <div class="row" style="gap:9px;margin-top:5px"><span class="btn sm">Read the tier policy</span><span class="btn sm">Open an issue asking for it</span></div>
+      </div>
+    </div>
+
+    <div class="col" style="gap:11px;margin-bottom:26px">
+      <div class="eyebrow">What it is</div>
+      <div style="color:#cbd5e1;max-width:74ch;font-size:16.5px;line-height:1.65">A structure for a forest of rooted trees whose <em style="font-style:normal;color:#e2e8f0">shape changes constantly</em> — edges appear and disappear as you work. It answers questions about paths through those trees (the root of this node, the maximum edge weight along this path) in O(log n) amortized, while <code class="mono" style="font-size:13px;color:#7dd3fc">link</code> and <code class="mono" style="font-size:13px;color:#7dd3fc">cut</code> reshape the forest in the same time.</div>
+      <div style="color:#cbd5e1;max-width:74ch;font-size:16.5px;line-height:1.65">The trick is that it never stores the tree directly. It decomposes the forest into <em style="font-style:normal;color:#e2e8f0">preferred paths</em>, stores each path as a splay tree keyed by depth, and links those splay trees together. Every operation begins by splaying the node you asked about up to the root of its path.</div>
+    </div>
+
+    <div class="panel use" style="margin-bottom:16px">
+      <div class="phead"><span style="color:#34d399"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span><h2 style="color:#6ee7b7">When to use it</h2></div>
+      <div class="col" style="gap:10px">
+        <div class="bul"><span class="tick" style="color:#34d399">·</span><span style="color:#cbd5e1">Dynamic connectivity in a forest where edges are added and removed online — network reconfiguration, incremental MST maintenance.</span></div>
+        <div class="bul"><span class="tick" style="color:#34d399">·</span><span style="color:#cbd5e1">As the backing structure for a max-flow implementation that needs path updates in logarithmic time.</span></div>
+      </div>
+    </div>
+
+    <div class="panel avoid" style="margin-bottom:26px">
+      <div class="phead"><span style="color:#f87171"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><circle cx="12" cy="12" r="9"/><path d="m8.2 15.8 7.6-7.6"/></svg></span><h2 style="color:#fca5a5">When <span style="text-decoration:underline;text-decoration-color:rgba(248,113,113,.5);text-underline-offset:3px">not</span> to use it</h2></div>
+      <div class="col" style="gap:10px">
+        <div class="bul"><span class="tick" style="color:#f87171">·</span><span style="color:#cbd5e1">The tree is static. Use <a href="#">binary lifting</a> or an <a href="#">Euler tour + sparse table</a> — an order of magnitude simpler and faster in practice.</span></div>
+        <div class="bul"><span class="tick" style="color:#f87171">·</span><span style="color:#cbd5e1">You only ever add edges, never remove them. A <a href="#">Union-Find</a> does that in near-constant time in about twenty lines.</span></div>
+        <div class="bul"><span class="tick" style="color:#f87171">·</span><span style="color:#cbd5e1">Almost always, honestly. If you reach for this in application code, one of the two rows above is probably your real answer.</span></div>
+      </div>
+    </div>
+
+    <div class="col" style="gap:13px">
+      <div class="row" style="gap:10px"><div class="eyebrow">Complexity</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+      <table>
+        <tr><th style="width:190px">Operation</th><th style="width:170px">Amortized</th><th>In plain words</th></tr>
+        <tr><td class="o">link / cut</td><td class="c">O(log n)</td><td class="mut">Attach or detach a subtree.</td></tr>
+        <tr><td class="o">findRoot</td><td class="c">O(log n)</td><td class="mut">Which tree is this node in?</td></tr>
+        <tr><td class="o" style="border:0">pathAggregate</td><td class="c" style="border:0">O(log n)</td><td class="mut" style="border:0">Sum, max, or min along the path between two nodes.</td></tr>
+      </table>
+      <div class="xs faint" style="margin-top:4px">Amortized over a sequence of operations — a single operation can be O(n) in the worst case. That gap is exactly what makes this hard to test to 100&nbsp;% branch coverage.</div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

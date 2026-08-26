@@ -1,0 +1,2455 @@
+{
+  "$schema": "./catalog.schema.md",
+  "generatedFor": "prosenjit-nandi/DataStructures",
+  "totals": {
+    "structures": 129,
+    "built": 7,
+    "byPhase": {
+      "1": 24,
+      "2": 25,
+      "3": 36,
+      "4": 29,
+      "5": 15
+    },
+    "byCategory": {
+      "foundations": 11,
+      "linear": 13,
+      "hashing": 14,
+      "trees": 20,
+      "heaps": 9,
+      "tries": 12,
+      "graphs": 10,
+      "range": 8,
+      "spatial": 8,
+      "probabilistic": 8,
+      "persistent": 6,
+      "concurrent": 10
+    },
+    "byTier": {
+      "full": 49,
+      "standard": 65,
+      "explained": 15
+    }
+  },
+  "categories": [
+    {
+      "id": "foundations",
+      "label": "Foundations \u2014 Arrays & Lists",
+      "package": "datastructure.foundations"
+    },
+    {
+      "id": "linear",
+      "label": "Linear \u2014 Stacks, Queues, Deques",
+      "package": "datastructure.linear"
+    },
+    {
+      "id": "hashing",
+      "label": "Hashing \u2014 Tables, Sets, Caches",
+      "package": "datastructure.hashing"
+    },
+    {
+      "id": "trees",
+      "label": "Trees & Balanced Search Trees",
+      "package": "datastructure.trees"
+    },
+    {
+      "id": "heaps",
+      "label": "Heaps & Priority Queues",
+      "package": "datastructure.heaps"
+    },
+    {
+      "id": "tries",
+      "label": "Tries & Text Structures",
+      "package": "datastructure.tries"
+    },
+    {
+      "id": "graphs",
+      "label": "Graphs & Disjoint Sets",
+      "package": "datastructure.graphs"
+    },
+    {
+      "id": "range",
+      "label": "Range Query Structures",
+      "package": "datastructure.range"
+    },
+    {
+      "id": "spatial",
+      "label": "Spatial & Multidimensional",
+      "package": "datastructure.spatial"
+    },
+    {
+      "id": "probabilistic",
+      "label": "Probabilistic & Sketch Structures",
+      "package": "datastructure.probabilistic"
+    },
+    {
+      "id": "persistent",
+      "label": "Persistent & Functional Structures",
+      "package": "datastructure.persistent"
+    },
+    {
+      "id": "concurrent",
+      "label": "Concurrent & Lock-Free Structures",
+      "package": "datastructure.concurrent"
+    }
+  ],
+  "phases": [
+    {
+      "phase": 1,
+      "theme": "Foundations & platform",
+      "description": "The structures a first-year course covers, on a rebuilt site that proves the content pipeline end to end.",
+      "tier": "full",
+      "count": 24
+    },
+    {
+      "phase": 2,
+      "theme": "Interview core",
+      "description": "Everything a candidate is asked about: balanced trees, heaps, tries, range queries, caches.",
+      "tier": "full",
+      "count": 25
+    },
+    {
+      "phase": 3,
+      "theme": "Advanced & applied",
+      "description": "Structures a working engineer reaches for: B-trees, spatial indexes, sketches, string indexes.",
+      "tier": "standard",
+      "count": 36
+    },
+    {
+      "phase": 4,
+      "theme": "Specialized",
+      "description": "Research-grade and domain-specific structures, plus persistent collections.",
+      "tier": "standard",
+      "count": 29
+    },
+    {
+      "phase": 5,
+      "theme": "Long tail",
+      "description": "Exotic and mostly-theoretical structures, documented for completeness.",
+      "tier": "explained",
+      "count": 15
+    }
+  ],
+  "structures": [
+    {
+      "id": "DS-001",
+      "slug": "static-array",
+      "name": "Static Array",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.StaticArray",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "T[]",
+      "prerequisites": []
+    },
+    {
+      "id": "DS-002",
+      "slug": "dynamic-array",
+      "name": "Dynamic Array (growable)",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.DynamicArray",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.ArrayList",
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-003",
+      "slug": "bitset",
+      "name": "Bit Set",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.Bitset",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.BitSet",
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-004",
+      "slug": "singly-linked-list",
+      "name": "Singly Linked List",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.foundations.SinglyLinkedList",
+      "currentClass": "datastructure.BasicLinkedList",
+      "sourceFile": "src/main/java/datastructure/BasicLinkedList.java",
+      "jdkAnalog": null,
+      "prerequisites": []
+    },
+    {
+      "id": "DS-005",
+      "slug": "doubly-linked-list",
+      "name": "Doubly Linked List",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.DoublyLinkedList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.LinkedList",
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-006",
+      "slug": "circular-linked-list",
+      "name": "Circular Linked List",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.CircularLinkedList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-007",
+      "slug": "unrolled-linked-list",
+      "name": "Unrolled Linked List",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.UnrolledLinkedList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "doubly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-008",
+      "slug": "xor-linked-list",
+      "name": "XOR Linked List (theory in Java)",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.XorLinkedList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "doubly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-009",
+      "slug": "self-organizing-list",
+      "name": "Self-Organizing List (move-to-front)",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.SelfOrganizingList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-010",
+      "slug": "skip-list",
+      "name": "Skip List",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.SkipList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.concurrent.ConcurrentSkipListMap",
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-011",
+      "slug": "sparse-array",
+      "name": "Sparse Array / Sparse Set",
+      "category": "foundations",
+      "categoryLabel": "Foundations \u2014 Arrays & Lists",
+      "difficulty": "intermediate",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.foundations.SparseArray",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-012",
+      "slug": "array-stack",
+      "name": "Array Stack",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.linear.ArrayStack",
+      "currentClass": "datastructure.stack.ArrayStack",
+      "sourceFile": "src/main/java/datastructure/stack/ArrayStack.java",
+      "jdkAnalog": "java.util.ArrayDeque",
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-013",
+      "slug": "list-stack",
+      "name": "List-Backed Stack",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.linear.ListStack",
+      "currentClass": "datastructure.stack.ListStack",
+      "sourceFile": "src/main/java/datastructure/stack/ListStack.java",
+      "jdkAnalog": "java.util.ArrayDeque",
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-014",
+      "slug": "linked-stack",
+      "name": "Linked Stack",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.LinkedStack",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-015",
+      "slug": "min-stack",
+      "name": "Min/Max Stack (O(1) extremum)",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.MinStack",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "array-stack"
+      ]
+    },
+    {
+      "id": "DS-016",
+      "slug": "array-queue",
+      "name": "Circular Array Queue",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.linear.ArrayQueue",
+      "currentClass": "datastructure.queue.ArrayQueue",
+      "sourceFile": "src/main/java/datastructure/queue/ArrayQueue.java",
+      "jdkAnalog": "java.util.ArrayDeque",
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-017",
+      "slug": "list-queue",
+      "name": "List-Backed Queue",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.linear.ListQueue",
+      "currentClass": "datastructure.queue.ListQueue",
+      "sourceFile": "src/main/java/datastructure/queue/ListQueue.java",
+      "jdkAnalog": "java.util.ArrayDeque",
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-018",
+      "slug": "linked-queue",
+      "name": "Linked Queue",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.LinkedQueue",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-019",
+      "slug": "deque",
+      "name": "Double-Ended Queue",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.Deque",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.ArrayDeque",
+      "prerequisites": [
+        "array-queue"
+      ]
+    },
+    {
+      "id": "DS-020",
+      "slug": "circular-buffer",
+      "name": "Circular / Ring Buffer",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.CircularBuffer",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "array-queue"
+      ]
+    },
+    {
+      "id": "DS-021",
+      "slug": "monotonic-stack",
+      "name": "Monotonic Stack",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.MonotonicStack",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "array-stack"
+      ]
+    },
+    {
+      "id": "DS-022",
+      "slug": "monotonic-deque",
+      "name": "Monotonic Deque (sliding-window max)",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.MonotonicDeque",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "deque"
+      ]
+    },
+    {
+      "id": "DS-023",
+      "slug": "queue-from-stacks",
+      "name": "Queue From Two Stacks",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.QueueFromStacks",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "array-stack"
+      ]
+    },
+    {
+      "id": "DS-024",
+      "slug": "stack-from-queues",
+      "name": "Stack From Two Queues",
+      "category": "linear",
+      "categoryLabel": "Linear \u2014 Stacks, Queues, Deques",
+      "difficulty": "beginner",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.linear.StackFromQueues",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "array-queue"
+      ]
+    },
+    {
+      "id": "DS-025",
+      "slug": "hash-chaining",
+      "name": "Hash Table \u2014 Separate Chaining",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.HashChaining",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.HashMap",
+      "prerequisites": [
+        "singly-linked-list",
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-026",
+      "slug": "hash-linear-probing",
+      "name": "Hash Table \u2014 Linear Probing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "intermediate",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.hashing.LinearProbingHashTable",
+      "currentClass": "datastructure.BasicHashTable",
+      "sourceFile": "src/main/java/datastructure/BasicHashTable.java",
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-027",
+      "slug": "hash-quadratic-probing",
+      "name": "Hash Table \u2014 Quadratic Probing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.HashQuadraticProbing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-linear-probing"
+      ]
+    },
+    {
+      "id": "DS-028",
+      "slug": "hash-double-hashing",
+      "name": "Hash Table \u2014 Double Hashing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.HashDoubleHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-linear-probing"
+      ]
+    },
+    {
+      "id": "DS-029",
+      "slug": "robin-hood-hashing",
+      "name": "Robin Hood Hashing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.RobinHoodHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-linear-probing"
+      ]
+    },
+    {
+      "id": "DS-030",
+      "slug": "cuckoo-hashing",
+      "name": "Cuckoo Hashing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.CuckooHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-linear-probing"
+      ]
+    },
+    {
+      "id": "DS-031",
+      "slug": "hopscotch-hashing",
+      "name": "Hopscotch Hashing",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.HopscotchHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-linear-probing"
+      ]
+    },
+    {
+      "id": "DS-032",
+      "slug": "perfect-hashing",
+      "name": "Perfect Hashing (FKS)",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.PerfectHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-033",
+      "slug": "hash-set",
+      "name": "Hash Set",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.HashSet",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.HashSet",
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-034",
+      "slug": "linked-hash-map",
+      "name": "Insertion-Ordered Hash Map",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.LinkedHashMap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.LinkedHashMap",
+      "prerequisites": [
+        "hash-chaining",
+        "doubly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-035",
+      "slug": "lru-cache",
+      "name": "LRU Cache",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.LruCache",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "LinkedHashMap(accessOrder)",
+      "prerequisites": [
+        "linked-hash-map"
+      ]
+    },
+    {
+      "id": "DS-036",
+      "slug": "lfu-cache",
+      "name": "LFU Cache",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.LfuCache",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "lru-cache"
+      ]
+    },
+    {
+      "id": "DS-037",
+      "slug": "multimap",
+      "name": "Multimap",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "beginner",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.Multimap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "Map<K,List<V>>",
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-038",
+      "slug": "consistent-hashing",
+      "name": "Consistent Hashing Ring",
+      "category": "hashing",
+      "categoryLabel": "Hashing \u2014 Tables, Sets, Caches",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.hashing.ConsistentHashing",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-039",
+      "slug": "binary-tree",
+      "name": "Binary Tree & Traversals",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.trees.BinaryTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": []
+    },
+    {
+      "id": "DS-040",
+      "slug": "bst",
+      "name": "Binary Search Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "done",
+      "targetClass": "datastructure.trees.BinarySearchTree",
+      "currentClass": "datastructure.BasicBinaryTree",
+      "sourceFile": "src/main/java/datastructure/BasicBinaryTree.java",
+      "jdkAnalog": "java.util.TreeMap",
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-041",
+      "slug": "threaded-binary-tree",
+      "name": "Threaded Binary Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.ThreadedBinaryTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-042",
+      "slug": "avl-tree",
+      "name": "AVL Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.trees.AvlTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-043",
+      "slug": "red-black-tree",
+      "name": "Red-Black Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.trees.RedBlackTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.TreeMap",
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-044",
+      "slug": "splay-tree",
+      "name": "Splay Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.SplayTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-045",
+      "slug": "treap",
+      "name": "Treap (randomized BST)",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.Treap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst",
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-046",
+      "slug": "scapegoat-tree",
+      "name": "Scapegoat Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.ScapegoatTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-047",
+      "slug": "two-three-tree",
+      "name": "2-3 Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.TwoThreeTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-048",
+      "slug": "two-three-four-tree",
+      "name": "2-3-4 Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.TwoThreeFourTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "two-three-tree"
+      ]
+    },
+    {
+      "id": "DS-049",
+      "slug": "b-tree",
+      "name": "B-Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.BTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "two-three-tree"
+      ]
+    },
+    {
+      "id": "DS-050",
+      "slug": "b-plus-tree",
+      "name": "B+ Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "expert",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.BPlusTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "b-tree"
+      ]
+    },
+    {
+      "id": "DS-051",
+      "slug": "order-statistic-tree",
+      "name": "Order-Statistic Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.OrderStatisticTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "avl-tree"
+      ]
+    },
+    {
+      "id": "DS-052",
+      "slug": "cartesian-tree",
+      "name": "Cartesian Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.CartesianTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "treap"
+      ]
+    },
+    {
+      "id": "DS-053",
+      "slug": "interval-tree",
+      "name": "Interval Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.IntervalTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "red-black-tree"
+      ]
+    },
+    {
+      "id": "DS-054",
+      "slug": "rope",
+      "name": "Rope (string tree)",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.Rope",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-055",
+      "slug": "merkle-tree",
+      "name": "Merkle Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.trees.MerkleTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-056",
+      "slug": "van-emde-boas",
+      "name": "van Emde Boas Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.trees.VanEmdeBoas",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-057",
+      "slug": "link-cut-tree",
+      "name": "Link-Cut Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.trees.LinkCutTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "splay-tree"
+      ]
+    },
+    {
+      "id": "DS-058",
+      "slug": "euler-tour-tree",
+      "name": "Euler Tour Tree",
+      "category": "trees",
+      "categoryLabel": "Trees & Balanced Search Trees",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.trees.EulerTourTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "treap"
+      ]
+    },
+    {
+      "id": "DS-059",
+      "slug": "binary-heap",
+      "name": "Binary Heap (min/max)",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.BinaryHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.PriorityQueue",
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-060",
+      "slug": "d-ary-heap",
+      "name": "d-ary Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.DAryHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-061",
+      "slug": "indexed-pq",
+      "name": "Indexed Priority Queue",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.IndexedPq",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap",
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-062",
+      "slug": "min-max-heap",
+      "name": "Min-Max (double-ended) Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.MinMaxHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-063",
+      "slug": "binomial-heap",
+      "name": "Binomial Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.BinomialHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-064",
+      "slug": "fibonacci-heap",
+      "name": "Fibonacci Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.FibonacciHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binomial-heap"
+      ]
+    },
+    {
+      "id": "DS-065",
+      "slug": "leftist-heap",
+      "name": "Leftist Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.LeftistHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-066",
+      "slug": "skew-heap",
+      "name": "Skew Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.SkewHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "leftist-heap"
+      ]
+    },
+    {
+      "id": "DS-067",
+      "slug": "pairing-heap",
+      "name": "Pairing Heap",
+      "category": "heaps",
+      "categoryLabel": "Heaps & Priority Queues",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.heaps.PairingHeap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binomial-heap"
+      ]
+    },
+    {
+      "id": "DS-068",
+      "slug": "trie",
+      "name": "Trie (prefix tree)",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.tries.Trie",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-069",
+      "slug": "radix-trie",
+      "name": "Radix / Patricia Trie",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "advanced",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.tries.RadixTrie",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie"
+      ]
+    },
+    {
+      "id": "DS-070",
+      "slug": "ternary-search-tree",
+      "name": "Ternary Search Tree",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.TernarySearchTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie",
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-071",
+      "slug": "binary-xor-trie",
+      "name": "Binary (XOR) Trie",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.tries.BinaryXorTrie",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie"
+      ]
+    },
+    {
+      "id": "DS-072",
+      "slug": "suffix-trie",
+      "name": "Suffix Trie",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.SuffixTrie",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie"
+      ]
+    },
+    {
+      "id": "DS-073",
+      "slug": "suffix-array",
+      "name": "Suffix Array + LCP",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.SuffixArray",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "suffix-trie"
+      ]
+    },
+    {
+      "id": "DS-074",
+      "slug": "suffix-tree",
+      "name": "Suffix Tree (Ukkonen)",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.SuffixTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "suffix-trie"
+      ]
+    },
+    {
+      "id": "DS-075",
+      "slug": "suffix-automaton",
+      "name": "Suffix Automaton",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.tries.SuffixAutomaton",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "suffix-tree"
+      ]
+    },
+    {
+      "id": "DS-076",
+      "slug": "aho-corasick",
+      "name": "Aho-Corasick Automaton",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.AhoCorasick",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie"
+      ]
+    },
+    {
+      "id": "DS-077",
+      "slug": "kmp-failure-table",
+      "name": "KMP Failure Table",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.tries.KmpFailureTable",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": []
+    },
+    {
+      "id": "DS-078",
+      "slug": "z-array",
+      "name": "Z-Array",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.tries.ZArray",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": []
+    },
+    {
+      "id": "DS-079",
+      "slug": "wavelet-tree",
+      "name": "Wavelet Tree",
+      "category": "tries",
+      "categoryLabel": "Tries & Text Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.tries.WaveletTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-080",
+      "slug": "adjacency-list",
+      "name": "Adjacency List Graph",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.AdjacencyList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-081",
+      "slug": "adjacency-matrix",
+      "name": "Adjacency Matrix Graph",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.AdjacencyMatrix",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-082",
+      "slug": "edge-list",
+      "name": "Edge List Graph",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.EdgeList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-083",
+      "slug": "incidence-matrix",
+      "name": "Incidence Matrix",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "intermediate",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.IncidenceMatrix",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "adjacency-matrix"
+      ]
+    },
+    {
+      "id": "DS-084",
+      "slug": "csr-graph",
+      "name": "Compressed Sparse Row Graph",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.CsrGraph",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "adjacency-list"
+      ]
+    },
+    {
+      "id": "DS-085",
+      "slug": "union-find-naive",
+      "name": "Union-Find (quick find / quick union)",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.UnionFindNaive",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-086",
+      "slug": "union-find-optimized",
+      "name": "Union-Find (rank + path compression)",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "intermediate",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.UnionFindOptimized",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "union-find-naive"
+      ]
+    },
+    {
+      "id": "DS-087",
+      "slug": "weighted-union-find",
+      "name": "Weighted / Rollback Union-Find",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.WeightedUnionFind",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "union-find-optimized"
+      ]
+    },
+    {
+      "id": "DS-088",
+      "slug": "residual-graph",
+      "name": "Flow Network (residual graph)",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.ResidualGraph",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "adjacency-list"
+      ]
+    },
+    {
+      "id": "DS-089",
+      "slug": "lca-structure",
+      "name": "LCA Structure (binary lifting)",
+      "category": "graphs",
+      "categoryLabel": "Graphs & Disjoint Sets",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.graphs.LcaStructure",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "adjacency-list",
+        "sparse-table"
+      ]
+    },
+    {
+      "id": "DS-090",
+      "slug": "prefix-sum",
+      "name": "Prefix Sum & Difference Array",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "beginner",
+      "phase": 1,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.range.PrefixSum",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-091",
+      "slug": "fenwick-tree",
+      "name": "Fenwick Tree (BIT)",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.range.FenwickTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "prefix-sum"
+      ]
+    },
+    {
+      "id": "DS-092",
+      "slug": "fenwick-2d",
+      "name": "2D Fenwick Tree",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.range.Fenwick2d",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "fenwick-tree"
+      ]
+    },
+    {
+      "id": "DS-093",
+      "slug": "segment-tree",
+      "name": "Segment Tree",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.range.SegmentTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree",
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-094",
+      "slug": "segment-tree-lazy",
+      "name": "Segment Tree with Lazy Propagation",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.range.SegmentTreeLazy",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "segment-tree"
+      ]
+    },
+    {
+      "id": "DS-095",
+      "slug": "merge-sort-tree",
+      "name": "Merge Sort Tree",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.range.MergeSortTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "segment-tree"
+      ]
+    },
+    {
+      "id": "DS-096",
+      "slug": "sparse-table",
+      "name": "Sparse Table",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.range.SparseTable",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-097",
+      "slug": "sqrt-decomposition",
+      "name": "Sqrt Decomposition",
+      "category": "range",
+      "categoryLabel": "Range Query Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.range.SqrtDecomposition",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-098",
+      "slug": "kd-tree",
+      "name": "k-d Tree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.KdTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-099",
+      "slug": "quadtree",
+      "name": "Quadtree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.Quadtree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-100",
+      "slug": "octree",
+      "name": "Octree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.Octree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "quadtree"
+      ]
+    },
+    {
+      "id": "DS-101",
+      "slug": "r-tree",
+      "name": "R-Tree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.RTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "b-tree"
+      ]
+    },
+    {
+      "id": "DS-102",
+      "slug": "ball-tree",
+      "name": "Ball Tree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.BallTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "kd-tree"
+      ]
+    },
+    {
+      "id": "DS-103",
+      "slug": "bsp-tree",
+      "name": "BSP Tree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.BspTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-tree"
+      ]
+    },
+    {
+      "id": "DS-104",
+      "slug": "spatial-hash",
+      "name": "Spatial Hash Grid",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.SpatialHash",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-105",
+      "slug": "range-tree",
+      "name": "Range Tree",
+      "category": "spatial",
+      "categoryLabel": "Spatial & Multidimensional",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.spatial.RangeTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bst"
+      ]
+    },
+    {
+      "id": "DS-106",
+      "slug": "bloom-filter",
+      "name": "Bloom Filter",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.BloomFilter",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bitset"
+      ]
+    },
+    {
+      "id": "DS-107",
+      "slug": "counting-bloom",
+      "name": "Counting Bloom Filter",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.CountingBloom",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bloom-filter"
+      ]
+    },
+    {
+      "id": "DS-108",
+      "slug": "cuckoo-filter",
+      "name": "Cuckoo Filter",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.CuckooFilter",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "cuckoo-hashing"
+      ]
+    },
+    {
+      "id": "DS-109",
+      "slug": "hyperloglog",
+      "name": "HyperLogLog",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.Hyperloglog",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "bitset"
+      ]
+    },
+    {
+      "id": "DS-110",
+      "slug": "count-min-sketch",
+      "name": "Count-Min Sketch",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.CountMinSketch",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-111",
+      "slug": "minhash",
+      "name": "MinHash / LSH",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.Minhash",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-112",
+      "slug": "reservoir-sample",
+      "name": "Reservoir Sampling Structure",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.ReservoirSample",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-113",
+      "slug": "t-digest",
+      "name": "t-digest (quantile sketch)",
+      "category": "probabilistic",
+      "categoryLabel": "Probabilistic & Sketch Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.probabilistic.TDigest",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "binary-heap"
+      ]
+    },
+    {
+      "id": "DS-114",
+      "slug": "persistent-list",
+      "name": "Persistent (immutable) List",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.PersistentList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.List.of",
+      "prerequisites": [
+        "singly-linked-list"
+      ]
+    },
+    {
+      "id": "DS-115",
+      "slug": "hamt",
+      "name": "Hash Array Mapped Trie",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.Hamt",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "trie",
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-116",
+      "slug": "persistent-vector",
+      "name": "Bit-Partitioned Vector Trie",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.PersistentVector",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hamt"
+      ]
+    },
+    {
+      "id": "DS-117",
+      "slug": "persistent-segment-tree",
+      "name": "Persistent Segment Tree",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.PersistentSegmentTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "segment-tree"
+      ]
+    },
+    {
+      "id": "DS-118",
+      "slug": "finger-tree",
+      "name": "Finger Tree",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.FingerTree",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "two-three-tree"
+      ]
+    },
+    {
+      "id": "DS-119",
+      "slug": "zipper",
+      "name": "Zipper",
+      "category": "persistent",
+      "categoryLabel": "Persistent & Functional Structures",
+      "difficulty": "advanced",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.persistent.Zipper",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "persistent-list"
+      ]
+    },
+    {
+      "id": "DS-120",
+      "slug": "treiber-stack",
+      "name": "Treiber Stack (lock-free)",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.TreiberStack",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "linked-stack"
+      ]
+    },
+    {
+      "id": "DS-121",
+      "slug": "ms-queue",
+      "name": "Michael-Scott Queue (lock-free)",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.MsQueue",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "ConcurrentLinkedQueue",
+      "prerequisites": [
+        "linked-queue"
+      ]
+    },
+    {
+      "id": "DS-122",
+      "slug": "bounded-blocking-queue",
+      "name": "Bounded Blocking Queue",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.BoundedBlockingQueue",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "ArrayBlockingQueue",
+      "prerequisites": [
+        "array-queue"
+      ]
+    },
+    {
+      "id": "DS-123",
+      "slug": "striped-hash-map",
+      "name": "Striped Concurrent Hash Map",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "advanced",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.StripedHashMap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "ConcurrentHashMap",
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-124",
+      "slug": "copy-on-write-list",
+      "name": "Copy-On-Write List",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "intermediate",
+      "phase": 2,
+      "tier": "full",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.CopyOnWriteList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "CopyOnWriteArrayList",
+      "prerequisites": [
+        "dynamic-array"
+      ]
+    },
+    {
+      "id": "DS-125",
+      "slug": "concurrent-skip-list",
+      "name": "Concurrent Skip List",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "expert",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.ConcurrentSkipList",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "ConcurrentSkipListMap",
+      "prerequisites": [
+        "skip-list"
+      ]
+    },
+    {
+      "id": "DS-126",
+      "slug": "lock-free-ring-buffer",
+      "name": "Lock-Free Ring Buffer",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.LockFreeRingBuffer",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "circular-buffer"
+      ]
+    },
+    {
+      "id": "DS-127",
+      "slug": "striped-counter",
+      "name": "Striped Counter",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "intermediate",
+      "phase": 3,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.StripedCounter",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "java.util.concurrent.atomic.LongAdder",
+      "prerequisites": [
+        "static-array"
+      ]
+    },
+    {
+      "id": "DS-128",
+      "slug": "stamped-lock-map",
+      "name": "StampedLock-Guarded Map",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "advanced",
+      "phase": 4,
+      "tier": "standard",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.StampedLockMap",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": null,
+      "prerequisites": [
+        "hash-chaining"
+      ]
+    },
+    {
+      "id": "DS-129",
+      "slug": "chase-lev-deque",
+      "name": "Work-Stealing Deque (Chase-Lev)",
+      "category": "concurrent",
+      "categoryLabel": "Concurrent & Lock-Free Structures",
+      "difficulty": "expert",
+      "phase": 5,
+      "tier": "explained",
+      "status": "missing",
+      "targetClass": "datastructure.concurrent.ChaseLevDeque",
+      "currentClass": null,
+      "sourceFile": null,
+      "jdkAnalog": "ForkJoinPool internals",
+      "prerequisites": [
+        "deque"
+      ]
+    }
+  ]
+}

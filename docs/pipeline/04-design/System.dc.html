@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+:root{
+  /* carried from tutorial-app/src/App.css */
+  --bg:#0f111a; --surface:#161926; --surface-2:#1a1d2d; --rail:#131522; --code-bg:#12141f;
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --ink:#e2e8f0; --ink-hi:#f4f7fb; --ink-mut:#94a3b8; --ink-faint:#64748b;
+  --accent:#3b82f6; --accent-hi:#60a5fa; --accent-bg:rgba(59,130,246,.12); --accent-line:rgba(59,130,246,.35);
+  /* semantic */
+  --use:#34d399; --use-bg:rgba(52,211,153,.09); --use-line:rgba(52,211,153,.28);
+  --avoid:#f87171; --avoid-bg:rgba(248,113,113,.09); --avoid-line:rgba(248,113,113,.30);
+  --warn:#fbbf24; --warn-bg:rgba(251,191,36,.09); --warn-line:rgba(251,191,36,.28);
+  /* scale */
+  --r1:4px; --r2:6px; --r3:10px; --r4:14px;
+  --sans:'IBM Plex Sans',ui-sans-serif,system-ui,'Segoe UI',sans-serif;
+  --disp:'Space Grotesk','IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent-hi);text-decoration:none}
+a:hover{color:#93c5fd;text-decoration:underline}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink-hi);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+h1{font-size:38px}
+h2{font-size:21px;letter-spacing:-.01em}
+h3{font-size:16px;letter-spacing:0}
+.eyebrow{font:600 11.5px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint)}
+.mut{color:var(--ink-mut)}
+.faint{color:var(--ink-faint)}
+.sm{font-size:14px;line-height:1.55}
+.xs{font-size:12.5px;line-height:1.45}
+.mono{font-family:var(--mono)}
+.row{display:flex;align-items:center}
+.col{display:flex;flex-direction:column}
+/* chrome */
+.topbar{display:flex;align-items:center;gap:20px;height:60px;padding:0 28px;background:var(--rail);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:600 15.5px/1 var(--disp);color:var(--ink-hi);letter-spacing:-.01em}
+.searchbox{display:flex;align-items:center;gap:10px;flex-grow:1;max-width:420px;height:34px;padding:0 12px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r2);color:var(--ink-faint);font-size:13.5px}
+.kbd{font:500 11px/1 var(--mono);color:var(--ink-faint);border:1px solid var(--line-2);border-radius:var(--r1);padding:3px 5px}
+.navlink{font-size:13.5px;color:var(--ink-mut)}
+.navlink.on{color:var(--ink-hi)}
+/* rail */
+.rail{width:252px;flex-shrink:0;background:var(--rail);border-right:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;gap:4px}
+.railgrp{padding:16px 10px 6px}
+.railitem{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:var(--r2);color:var(--ink-mut);font-size:13.5px}
+.railitem.on{background:var(--accent-bg);color:var(--ink-hi);box-shadow:inset 2px 0 0 var(--accent)}
+.railitem .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 9px;border-radius:var(--r1);font:500 11.5px/1 var(--sans);letter-spacing:.02em;border:1px solid var(--line-2);color:var(--ink-mut)}
+.chip.b{color:var(--use);border-color:var(--use-line);background:var(--use-bg)}
+.chip.i{color:var(--accent-hi);border-color:var(--accent-line);background:var(--accent-bg)}
+.chip.a{color:var(--warn);border-color:var(--warn-line);background:var(--warn-bg)}
+.chip.e{color:var(--avoid);border-color:var(--avoid-line);background:var(--avoid-bg)}
+.chip.id{font-family:var(--mono);color:var(--ink-faint)}
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r4);padding:22px 24px}
+.panel.use{border-color:var(--use-line);background:linear-gradient(180deg,var(--use-bg),transparent 60%),var(--surface)}
+.panel.avoid{border-color:var(--avoid-line);background:linear-gradient(180deg,var(--avoid-bg),transparent 60%),var(--surface)}
+.phead{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:36px;padding:0 15px;border-radius:var(--r2);font:500 13.5px/1 var(--sans);border:1px solid var(--line-2);color:var(--ink);background:transparent}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.sm{height:29px;padding:0 11px;font-size:12.5px}
+/* table */
+table{border-collapse:collapse;width:100%}
+th{font:600 11.5px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);text-align:left;padding:0 14px 9px 0;border-bottom:1px solid var(--line)}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);font-size:14px;vertical-align:top}
+td.o{font-family:var(--mono);color:var(--ink-hi);font-size:13px}
+td.c{font-family:var(--mono);font-size:13px;color:var(--accent-hi)}
+/* code */
+.codewrap{background:var(--code-bg);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden}
+.codebar{display:flex;align-items:center;gap:4px;padding:8px 10px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+.tab{padding:5px 11px;border-radius:var(--r1);font:500 12.5px/1 var(--mono);color:var(--ink-faint)}
+.tab.on{background:rgba(255,255,255,.06);color:var(--ink-hi)}
+pre{font:400 13px/1.75 var(--mono);padding:14px 0;overflow:hidden}
+.ln{display:inline-block;width:40px;padding-right:14px;text-align:right;color:#3d465c;user-select:none}
+.k{color:#c4a2f5}.t{color:#6fc3df}.m{color:#82aaff}.n{color:#f78c6c}.s{color:#c3e88d}.cm{color:#5a6478;font-style:italic}.p{color:#7d8799}
+.hl{background:rgba(59,130,246,.10);box-shadow:inset 2px 0 0 var(--accent)}
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r3);padding:15px 16px;display:flex;flex-direction:column;gap:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.tick{flex-shrink:0;margin-top:3px}
+
+  </style>
+</helmet>
+<div style="padding:40px 48px 56px;display:flex;flex-direction:column;gap:34px">
+  <div class="col" style="gap:9px">
+    <div class="eyebrow" style="color:#60a5fa">Design system</div>
+    <h1 style="font-size:34px">Tokens, type, components</h1>
+    <div class="mut" style="max-width:82ch;font-size:15.5px">Extends the palette already in <span class="mono" style="color:#7dd3fc;font-size:13.5px">tutorial-app/src/App.css</span> — backgrounds, ink and accent are the app's existing values, unchanged. What's new is the semantic layer (use / avoid / caution), a real type scale, and named difficulty colours. Full values in <span class="mono" style="color:#7dd3fc;font-size:13.5px">docs/pipeline/04-design/design-system.md</span>.</div>
+  </div>
+
+  <div class="col" style="gap:14px">
+    <div class="row" style="gap:10px"><div class="eyebrow">Surfaces &amp; ink</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px">
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#0f111a;border:1px solid var(--line)"></div><div class="xs"><span style="color:#e2e8f0">--bg</span><br><span class="mono faint">#0f111a</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#161926;border:1px solid var(--line)"></div><div class="xs"><span style="color:#e2e8f0">--surface</span><br><span class="mono faint">#161926</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#1a1d2d;border:1px solid var(--line)"></div><div class="xs"><span style="color:#e2e8f0">--surface-2</span><br><span class="mono faint">#1a1d2d</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#131522;border:1px solid var(--line)"></div><div class="xs"><span style="color:#e2e8f0">--rail</span><br><span class="mono faint">#131522</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#12141f;border:1px solid var(--line)"></div><div class="xs"><span style="color:#e2e8f0">--code-bg</span><br><span class="mono faint">#12141f</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#3b82f6"></div><div class="xs"><span style="color:#e2e8f0">--accent</span><br><span class="mono faint">#3b82f6</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#f4f7fb"></div><div class="xs"><span style="color:#e2e8f0">--ink-hi</span><br><span class="mono faint">#f4f7fb · 16.9:1</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#e2e8f0"></div><div class="xs"><span style="color:#e2e8f0">--ink</span><br><span class="mono faint">#e2e8f0 · 14.4:1</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#94a3b8"></div><div class="xs"><span style="color:#e2e8f0">--ink-mut</span><br><span class="mono faint">#94a3b8 · 6.8:1</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#34d399"></div><div class="xs"><span style="color:#e2e8f0">--use</span><br><span class="mono faint">#34d399 · 9.9:1</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#f87171"></div><div class="xs"><span style="color:#e2e8f0">--avoid</span><br><span class="mono faint">#f87171 · 7.3:1</span></div></div>
+      <div class="col" style="gap:8px"><div style="height:58px;border-radius:var(--r3);background:#fbbf24"></div><div class="xs"><span style="color:#e2e8f0">--warn</span><br><span class="mono faint">#fbbf24 · 11.4:1</span></div></div>
+    </div>
+    <div class="xs faint">Contrast ratios are against <span class="mono">--bg</span>. Every value clears WCAG AA for body text (4.5:1); <span class="mono">--ink-faint #64748b</span> is 4.1:1 and is restricted to non-essential labels 14px and above.</div>
+  </div>
+
+  <div style="display:flex;gap:34px;align-items:flex-start">
+    <div class="col" style="gap:14px;flex-grow:1">
+      <div class="row" style="gap:10px"><div class="eyebrow">Type scale</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+      <div class="col" style="gap:15px">
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Display · Space Grotesk 600 · 38/1.15 · -.02em</span><span style="font:600 38px/1.15 var(--disp);color:#f4f7fb;letter-spacing:-.02em">Circular Array Queue</span></div>
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Section · 21/1.15 · -.01em</span><span style="font:600 21px/1.15 var(--disp);color:#f4f7fb;letter-spacing:-.01em">When not to use it</span></div>
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Body · IBM Plex Sans 400 · 16/1.65</span><span style="font-size:16px;line-height:1.65;color:#cbd5e1">The window of live elements rotates through the array.</span></div>
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Small · 14/1.55</span><span class="sm mut">Supporting copy, card descriptions, table cells.</span></div>
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Eyebrow · 600 11.5 · .11em caps</span><span class="eyebrow">Complexity</span></div>
+        <div class="row" style="gap:18px;align-items:baseline"><span class="xs mono faint" style="width:158px;flex-shrink:0">Code · JetBrains Mono · 13/1.75</span><span class="mono" style="font-size:13px;color:#7dd3fc">(front + size) % capacity</span></div>
+      </div>
+      <div class="xs faint">Three families, loaded from Google Fonts with system fallbacks. No Inter — the code face carries the developer signal, so the UI face can be a reading face.</div>
+    </div>
+
+    <div class="col" style="gap:14px;width:400px;flex-shrink:0">
+      <div class="row" style="gap:10px"><div class="eyebrow">Difficulty &amp; status</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip b">Beginner</span><span class="chip i">Intermediate</span><span class="chip a">Advanced</span><span class="chip e">Expert</span>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip" style="color:#34d399;border-color:var(--use-line)">✓ Built</span><span class="chip faint">Planned</span><span class="chip" style="color:#fbbf24;border-color:var(--warn-line);background:var(--warn-bg)">Explanation only</span><span class="chip id">DS-015</span>
+      </div>
+      <div class="xs faint">Difficulty and status never share a colour scale — status is stated in words as well as colour, so it does not depend on colour perception alone.</div>
+    </div>
+  </div>
+
+  <div class="col" style="gap:14px">
+    <div class="row" style="gap:10px"><div class="eyebrow">Component states</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px">
+      <div class="col" style="gap:12px">
+        <div class="xs mut">Primary button — 36px, radius 6</div>
+        <div style="display:flex;gap:9px;flex-wrap:wrap">
+          <span class="btn pri">Default</span>
+          <span class="btn pri" style="background:#2563eb;border-color:#2563eb">Hover</span>
+          <span class="btn pri" style="outline:2px solid #93c5fd;outline-offset:2px">Focus</span>
+          <span class="btn pri" style="opacity:.42">Disabled</span>
+        </div>
+      </div>
+      <div class="col" style="gap:12px">
+        <div class="xs mut">Secondary button</div>
+        <div style="display:flex;gap:9px;flex-wrap:wrap">
+          <span class="btn">Default</span>
+          <span class="btn" style="background:rgba(255,255,255,.05);border-color:var(--line-2)">Hover</span>
+          <span class="btn" style="outline:2px solid #93c5fd;outline-offset:2px">Focus</span>
+          <span class="btn" style="opacity:.42">Disabled</span>
+        </div>
+      </div>
+      <div class="col" style="gap:12px">
+        <div class="xs mut">Rail item — 32px, inset accent bar on active</div>
+        <div class="col" style="gap:3px;background:var(--rail);border:1px solid var(--line);border-radius:var(--r3);padding:8px">
+          <div class="railitem">Default</div>
+          <div class="railitem" style="background:rgba(255,255,255,.05);color:#e2e8f0">Hover</div>
+          <div class="railitem on">Active</div>
+        </div>
+      </div>
+    </div>
+    <div class="xs faint">Focus is a 2px <span class="mono">#93c5fd</span> ring at 2px offset on every interactive element, never removed. Touch targets are 44px minimum on the mobile artboard; 36px is desktop-pointer only.</div>
+  </div>
+
+  <div class="col" style="gap:14px">
+    <div class="row" style="gap:10px"><div class="eyebrow">Spacing, radii, motion</div><div style="height:1px;background:var(--line);flex-grow:1"></div></div>
+    <div style="display:flex;gap:34px;flex-wrap:wrap">
+      <div class="col" style="gap:9px"><span class="xs mut">Spacing — 4px base</span><div class="row" style="gap:7px;align-items:flex-end">
+        <div class="col" style="gap:5px;align-items:center"><div style="width:4px;height:26px;background:#3b82f6"></div><span class="xs mono faint">4</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:8px;height:26px;background:#3b82f6"></div><span class="xs mono faint">8</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:12px;height:26px;background:#3b82f6"></div><span class="xs mono faint">12</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:16px;height:26px;background:#3b82f6"></div><span class="xs mono faint">16</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:24px;height:26px;background:#3b82f6"></div><span class="xs mono faint">24</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:32px;height:26px;background:#3b82f6"></div><span class="xs mono faint">32</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:48px;height:26px;background:#3b82f6"></div><span class="xs mono faint">48</span></div>
+      </div></div>
+      <div class="col" style="gap:9px"><span class="xs mut">Radii</span><div class="row" style="gap:10px">
+        <div class="col" style="gap:5px;align-items:center"><div style="width:42px;height:34px;border:1px solid var(--line-2);border-radius:4px"></div><span class="xs mono faint">4 chip</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:42px;height:34px;border:1px solid var(--line-2);border-radius:6px"></div><span class="xs mono faint">6 btn</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:42px;height:34px;border:1px solid var(--line-2);border-radius:10px"></div><span class="xs mono faint">10 card</span></div>
+        <div class="col" style="gap:5px;align-items:center"><div style="width:42px;height:34px;border:1px solid var(--line-2);border-radius:14px"></div><span class="xs mono faint">14 panel</span></div>
+      </div></div>
+      <div class="col" style="gap:9px;max-width:330px"><span class="xs mut">Motion</span><span class="xs faint">One transition curve, <span class="mono">cubic-bezier(.4,0,.2,1)</span> at 180ms, carried over from the existing app. Visualizations step only on user action — nothing autoplays, and everything respects <span class="mono">prefers-reduced-motion</span>.</span></div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
