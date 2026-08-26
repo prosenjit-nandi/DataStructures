@@ -1,4 +1,4 @@
-package datastructure.stack;
+package datastructure.linear;
 
 import datastructure.interfaces.Stack;
 
@@ -55,7 +55,7 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
-    public T get(T item) {
+    public T find(T item) {
         for (int i = pointer - 1; i >= 0; i--) {
             if (data[i].equals(item)) {
                 return data[i];

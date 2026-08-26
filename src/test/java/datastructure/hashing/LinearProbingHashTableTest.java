@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.hashing;
 
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class BasicHashTableTest {
+class LinearProbingHashTableTest {
 
     /** A key with a caller-controlled hashCode, used to force collisions and negative hashes deterministically. */
     private static final class FixedHashKey {
@@ -34,7 +34,7 @@ class BasicHashTableTest {
 
     @Test
     void putAndGetBasic() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         table.put("a", 1);
         assertEquals(1, table.get("a"));
         assertNull(table.get("missing"));
@@ -44,14 +44,14 @@ class BasicHashTableTest {
 
     @Test
     void emptyTableIsEmpty() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         assertTrue(table.isEmpty());
         assertEquals(0, table.size());
     }
 
     @Test
     void puttingSameKeyTwiceOverwritesValueWithoutInflatingSize() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         table.put("a", 1);
         table.put("a", 2);
         assertEquals(1, table.size());
@@ -60,7 +60,7 @@ class BasicHashTableTest {
 
     @Test
     void negativeHashCodeKeyDoesNotThrow() {
-        var table = new BasicHashTable<FixedHashKey, String>(8);
+        var table = new LinearProbingHashTable<FixedHashKey, String>(8);
         var key = new FixedHashKey("neg", -5);
         table.put(key, "value");
         assertEquals("value", table.get(key));
@@ -69,7 +69,7 @@ class BasicHashTableTest {
 
     @Test
     void collisionChainProbesLinearlyAndDeleteShiftsSubsequentEntries() {
-        var table = new BasicHashTable<FixedHashKey, String>(8);
+        var table = new LinearProbingHashTable<FixedHashKey, String>(8);
         var k1 = new FixedHashKey("k1", 2);
         var k2 = new FixedHashKey("k2", 2);
         var k3 = new FixedHashKey("k3", 2);
@@ -93,7 +93,7 @@ class BasicHashTableTest {
 
     @Test
     void deleteNonExistentKeyReturnsNull() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         table.put("a", 1);
         assertNull(table.delete("missing"));
         assertEquals(1, table.size());
@@ -101,13 +101,13 @@ class BasicHashTableTest {
 
     @Test
     void hasKeyFalseOnEmptySlot() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         assertFalse(table.hasKey("missing"));
     }
 
     @Test
     void hasValueFindsAndMissesCorrectly() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         table.put("a", 1);
         table.put("b", 2);
         assertTrue(table.hasValue(2));
@@ -116,13 +116,13 @@ class BasicHashTableTest {
 
     @Test
     void hasValueOnEmptyTableIsFalse() {
-        var table = new BasicHashTable<String, Integer>(16);
+        var table = new LinearProbingHashTable<String, Integer>(16);
         assertFalse(table.hasValue(1));
     }
 
     @Test
     void growingPastLoadFactorKeepsAllEntriesRetrievable() {
-        var table = new BasicHashTable<Integer, Integer>(4);
+        var table = new LinearProbingHashTable<Integer, Integer>(4);
         for (int i = 0; i < 50; i++) {
             table.put(i, i * i);
         }

@@ -194,8 +194,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.foundations.SinglyLinkedList",
-      "currentClass": "datastructure.BasicLinkedList",
-      "sourceFile": "src/main/java/datastructure/BasicLinkedList.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/foundations/SinglyLinkedList.java",
       "jdkAnalog": null,
       "prerequisites": []
     },
@@ -336,8 +336,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.linear.ArrayStack",
-      "currentClass": "datastructure.stack.ArrayStack",
-      "sourceFile": "src/main/java/datastructure/stack/ArrayStack.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/linear/ArrayStack.java",
       "jdkAnalog": "java.util.ArrayDeque",
       "prerequisites": [
         "static-array"
@@ -354,8 +354,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.linear.ListStack",
-      "currentClass": "datastructure.stack.ListStack",
-      "sourceFile": "src/main/java/datastructure/stack/ListStack.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/linear/ListStack.java",
       "jdkAnalog": "java.util.ArrayDeque",
       "prerequisites": [
         "dynamic-array"
@@ -408,8 +408,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.linear.ArrayQueue",
-      "currentClass": "datastructure.queue.ArrayQueue",
-      "sourceFile": "src/main/java/datastructure/queue/ArrayQueue.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/linear/ArrayQueue.java",
       "jdkAnalog": "java.util.ArrayDeque",
       "prerequisites": [
         "static-array"
@@ -426,8 +426,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.linear.ListQueue",
-      "currentClass": "datastructure.queue.ListQueue",
-      "sourceFile": "src/main/java/datastructure/queue/ListQueue.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/linear/ListQueue.java",
       "jdkAnalog": "java.util.ArrayDeque",
       "prerequisites": [
         "dynamic-array"
@@ -589,8 +589,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.hashing.LinearProbingHashTable",
-      "currentClass": "datastructure.BasicHashTable",
-      "sourceFile": "src/main/java/datastructure/BasicHashTable.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/hashing/LinearProbingHashTable.java",
       "jdkAnalog": null,
       "prerequisites": [
         "static-array"
@@ -840,8 +840,8 @@
       "tier": "full",
       "status": "done",
       "targetClass": "datastructure.trees.BinarySearchTree",
-      "currentClass": "datastructure.BasicBinaryTree",
-      "sourceFile": "src/main/java/datastructure/BasicBinaryTree.java",
+      "currentClass": null,
+      "sourceFile": "src/main/java/datastructure/trees/BinarySearchTree.java",
       "jdkAnalog": "java.util.TreeMap",
       "prerequisites": [
         "binary-tree"

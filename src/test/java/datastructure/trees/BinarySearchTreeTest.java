@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.trees;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class BasicBinaryTreeTest {
+class BinarySearchTreeTest {
 
-    private BasicBinaryTree<Integer> tree;
+    private BinarySearchTree<Integer> tree;
 
     @BeforeEach
     void setUp() {
-        tree = new BasicBinaryTree<>();
+        tree = new BinarySearchTree<>();
     }
 
     @Test

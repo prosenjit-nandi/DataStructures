@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.trees;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +8,12 @@ import java.util.List;
  * @usage Useful for maintaining a sorted collection of elements with efficient search, insertion, and deletion operations (O(log n) on average).
  * @summary Implements a node-based binary tree structure. Supports insertion, searching, Hibbard deletion, and in-order traversal.
  */
-public class BasicBinaryTree<T extends Comparable<T>> {
+public class BinarySearchTree<T extends Comparable<T>> {
 
     private Node root;
     private int size;
 
-    public BasicBinaryTree() {
+    public BinarySearchTree() {
         this.root = null;
     }
 

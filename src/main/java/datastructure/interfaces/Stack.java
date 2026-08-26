@@ -9,7 +9,7 @@ public interface Stack<T> {
 
     boolean contains(T item);
 
-    T get(T item);
+    T find(T item);
 
     int size();
 

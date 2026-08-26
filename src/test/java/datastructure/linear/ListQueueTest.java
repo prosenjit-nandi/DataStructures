@@ -1,4 +1,4 @@
-package datastructure.queue;
+package datastructure.linear;
 
 import org.junit.jupiter.api.Test;
 

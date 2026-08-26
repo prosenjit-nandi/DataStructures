@@ -1,4 +1,4 @@
-package datastructure.stack;
+package datastructure.linear;
 
 import datastructure.interfaces.Stack;
 
@@ -41,7 +41,7 @@ public class ListStack<T> implements Stack<T> {
     }
 
     @Override
-    public T get(T item) {
+    public T find(T item) {
         for (int i = data.size() - 1; i >= 0; i--) {
             if (data.get(i).equals(item)) {
                 return data.get(i);

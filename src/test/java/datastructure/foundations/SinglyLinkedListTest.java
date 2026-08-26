@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.foundations;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,13 +9,13 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class BasicLinkedListTest {
+class SinglyLinkedListTest {
 
-    private BasicLinkedList<String> list;
+    private SinglyLinkedList<String> list;
 
     @BeforeEach
     void setUp() {
-        list = new BasicLinkedList<>();
+        list = new SinglyLinkedList<>();
     }
 
     @Test

@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.foundations;
 
 import datastructure.interfaces.LinkedList;
 
@@ -7,13 +7,13 @@ import datastructure.interfaces.LinkedList;
  * @usage Used for collections where frequent dynamic additions and removals (especially at the beginning or end) are needed without the overhead of resizing an underlying array.
  * @summary Composed of Node objects where each node points to the next. Supports standard list operations like add, insert, remove, and find.
  */
-public class BasicLinkedList<T> implements LinkedList<T> {
+public class SinglyLinkedList<T> implements LinkedList<T> {
 
     private Node first;
     private Node last;
     private int nodeCount;
 
-    public BasicLinkedList() {
+    public SinglyLinkedList() {
         first = null;
         last = null;
         nodeCount = 0;

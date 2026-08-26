@@ -1,18 +1,18 @@
-package datastructure;
+package datastructure.hashing;
 
 /**
  * @description A basic implementation of a Hash Table, providing key-value mapping functionality.
  * @usage Best used when fast O(1) lookups, insertions, and deletions are required, and the exact order of elements is not important.
  * @summary Uses an array of HashEntry objects and implements open-addressing with linear probing to handle collisions. It automatically resizes when a load factor threshold is reached.
  */
-public class BasicHashTable<K, V> {
+public class LinearProbingHashTable<K, V> {
     private static final double LOAD_FACTOR_THRESHOLD = 0.7;
 
     private HashEntry<K, V>[] data;
     private int capacity;
     private int size;
 
-    public BasicHashTable(int tableSize) {
+    public LinearProbingHashTable(int tableSize) {
         this.capacity = tableSize;
         this.data = newTable(tableSize);
         this.size = 0;

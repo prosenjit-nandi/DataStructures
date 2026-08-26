@@ -1,4 +1,4 @@
-package datastructure.stack;
+package datastructure.linear;
 
 import org.junit.jupiter.api.Test;
 
@@ -62,10 +62,10 @@ class ArrayStackTest {
         stack.push("a");
         stack.push("b");
         stack.push("c");
-        assertEquals("a", stack.get("a"));
+        assertEquals("a", stack.find("a"));
         assertEquals(3, stack.size());
         assertEquals("c", stack.peek());
-        assertNull(stack.get("missing"));
+        assertNull(stack.find("missing"));
         assertEquals(3, stack.size());
     }
 
